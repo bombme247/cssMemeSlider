@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider__wrap {
+    width: 90%;
+}
+
+.slider__img-wrap {
+    width: 100%;
+    height: auto;
+    display: flex;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+}
+
+.radio {
+    display: none;
+}
+
+.slider__controls {
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+}
+
+.slider__controls > label {
+    width: 17px;
+    height: 17px;
+    border: 3px solid black;
+    border-radius: 50%;
+}
