@@ -9,41 +9,86 @@ html {
 
 body {
   margin: auto;
-  padding: 0;
+  padding: 20px;
+  background: #eaeaea;
+  display: flex;
+  justify-content: space-evenly;
+  min-height: 100vh;
+}
+
+.container {
+  height: 80%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+
 }
 
 .slider__wrap {
-    width: 90%;
+  width: 90%;
+  overflow: hidden;
+
 }
 
 .slider__img-wrap {
-    width: 100%;
-    height: auto;
-    display: flex;
-    overflow: hidden;
+  display: flex;
 }
 
-img {
-    width: 100%;
+.slider__img-wrap > img {
+  width: 100%;
+  transition: .5s ease-in;
 }
 
-.radio {
-    display: none;
+.slider__img-wrap > img ~ img {
+  transform: rotateY(-65deg);
+}
+
+input[type=radio] {
+  display: none;
 }
 
 .slider__controls {
-    display: flex;
-    justify-content: space-between;
-    width: 120px;
+  display: flex;
+  gap: 10px;
 }
 
 .slider__controls > label {
-    width: 17px;
-    height: 17px;
-    border: 3px solid black;
-    border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  border: 3px solid #cbc5ea;
+  border-radius: 50%;
+  transition: .2s;
+}
+.slider__controls > label:hover {
+  background-color:  #cbc5ea;
+  cursor: pointer;
+}
+
+.container input:nth-child(1):checked ~ .caption-btn__wrapper label:nth-child(1),
+.container input:nth-child(2):checked ~ .caption-btn__wrapper label:nth-child(2),
+.container input:nth-child(3):checked ~ .caption-btn__wrapper label:nth-child(3),
+.container input:nth-child(4):checked ~ .caption-btn__wrapper label:nth-child(4) 
+{
+  background-color: #73628a;
+};
+
+#btn1:checked ~ .slider__wrap .slider__img-wrap img:nth-child(1){
+  margin-left: -0%;
+}
+#btn2:checked ~ .slider__wrap .slider__img-wrap img:nth-child(2){
+  margin-left: -100%;
+}
+#btn3:checked ~ .slider__wrap .slider__img-wrap img:nth-child(3){
+  margin-left: -200%;
+}
+#btn4:checked ~ .slider__wrap .slider__img-wrap img:nth-child(4){
+  margin-left: -300%;
+}
+
+#btn1:checked ~ .slider__wrap .slider__img-wrap img:nth-child(1),
+#btn2:checked ~ .slider__wrap .slider__img-wrap img:nth-child(2),
+#btn3:checked ~ .slider__wrap .slider__img-wrap img:nth-child(3),
+#btn4:checked ~ .slider__wrap .slider__img-wrap img:nth-child(4) {
+  transform: rotateY(0deg);
+
 }
