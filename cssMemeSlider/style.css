@@ -13,19 +13,21 @@ body {
   background: #eaeaea;
   display: flex;
   justify-content: space-evenly;
-  min-height: 100vh;
 }
 
 .container {
-  height: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  gap: 1em;
 }
 
 .caption-btn__wrapper {
   display: flex;
   width: 90%;
+  height: 5em;
+  background-color: white;
 }
 
 /* ====== image slider ======  */
@@ -48,21 +50,28 @@ input[type=radio] {
   display: none;
 }
 
-.slider__controls {
+.controls-wrap {
+  padding: 0.5%;
   display: flex;
   width: 30%;
+  height: 1em;
+}
+
+.slider__controls {
+  display: flex;
   gap: 10px;
+  margin-left: auto;
 }
 
 .slider__controls > label {
-  width: 15px;
-  height: 15px;
-  border: 3px solid #cbc5ea;
+  width: 0.8em;
+  height: 0.8em;
+  border: 3px solid #8a817c;
   border-radius: 50%;
   transition: .2s;
 }
 .slider__controls > label:hover {
-  background-color:  #cbc5ea;
+  background-color:  #bcb8b1;
   cursor: pointer;
 }
 
@@ -71,7 +80,7 @@ input[type=radio] {
 .container input:nth-child(3):checked ~ .caption-btn__wrapper label:nth-child(3),
 .container input:nth-child(4):checked ~ .caption-btn__wrapper label:nth-child(4) 
 {
-  background-color: #73628a;
+  background-color: #8a817c;
 }
 
 #btn1:checked ~ .slider__wrap .slider__img-wrap {
@@ -90,5 +99,53 @@ input[type=radio] {
 /* ====== captions slider ======  */
 .slider__captions {
   width: 70%;
+  overflow: hidden;
+}
+
+.caption__wrap {
+  padding: 0.5%;
   display: flex;
+  width: 100%;
+  transition: margin-left .5s cubic-bezier(0.770, 0.000, 0.175, 1.000)
+}
+
+.captions {
+  flex-shrink: 0;
+  flex-basis: 100%;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #463f3a;
+}
+
+
+#btn1:checked ~ .caption-btn__wrapper .caption__wrap {
+  margin-left: -0%;
+}
+#btn2:checked ~ .caption-btn__wrapper .caption__wrap {
+  margin-left: -100%;
+}
+#btn3:checked ~ .caption-btn__wrapper .caption__wrap {
+  margin-left: -200%;
+}
+#btn4:checked ~ .caption-btn__wrapper .caption__wrap {
+  margin-left: -300%;
+}
+
+@media screen and (max-width: 768px) {
+
+  .caption-btn__wrapper {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    height: 4em;
+  }
+
+  .slider__controls {
+    margin: auto;
+  }
+
+  .captions {
+    text-align: center;
+  }
 }

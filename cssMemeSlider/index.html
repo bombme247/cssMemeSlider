@@ -6,12 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>meme slider</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
   <div class="container">
-    <input type="radio" name="navigation" id="btn1">
+    <input type="radio" name="navigation" id="btn1" checked>
     <input type="radio" name="navigation" id="btn2">
     <input type="radio" name="navigation" id="btn3">
     <input type="radio" name="navigation" id="btn4">
@@ -26,17 +29,24 @@
     </div>
     <div class="caption-btn__wrapper">
       <div class="slider__captions">
-        <p class="captions">Man's best friend</p>
-        <p class="captions">The painfullest the funniest</p>
-        <p class="captions">Google is your everything!</p>
-        <p class="captions">Programmer's best friend</p>
+        <div class="caption__wrap">
+          <p class="captions">Man's best friend</p>
+          <p class="captions">The painfullest the funniest</p>
+          <p class="captions">Google is your everything!</p>
+          <p class="captions">Programmer's best friend</p>
+        </div>
       </div>
-      <div class="slider__controls">
+      <div class="controls-wrap">
+
+        <div class="slider__controls">
         <label for="btn1"></label>
         <label for="btn2"></label>
         <label for="btn3"></label>
         <label for="btn4"></label>
       </div>
+      
+      </div>
+      
     </div>
   
   </div>
